@@ -11,7 +11,7 @@ pkg install git
 
 pkg install python
 
-git clone https://github.com/RakaSkuyCuy/kensploit.spd
+git clone https://github.com/RakaSkuyCuy/kensploitpcv2
 
 cd kensploitpcv2
 
