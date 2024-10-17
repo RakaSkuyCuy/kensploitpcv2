@@ -23,7 +23,7 @@ const question = (text) => {
 };
 
 async function Kensploit() {
-    const { state } = await useMultiFileAuthState('./69/session');
+    const { state } = await useMultiFileAuthState('./kensploit/session');
     const KensploitPairing = makeWASocket({
         logger: pino({ level: "silent" }),
         printQRInTerminal: false,
