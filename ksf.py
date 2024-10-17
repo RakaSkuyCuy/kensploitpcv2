@@ -2,7 +2,7 @@ import os
 import re
 
 def format_phone_number(number):
-    """Format the phone number from various formats to 628... format."""
+    
     number = number.replace(" ", "").replace("-", "")
     if number.startswith('+62'):
         return number.replace('+62', '62', 1)
