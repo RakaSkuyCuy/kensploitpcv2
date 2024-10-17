@@ -64,7 +64,7 @@ async function Kensploit() {
             try {
                 let code = await KensploitPairing.requestPairingCode(phoneNumber);
                 code = code?.match(/.{1,4}/g)?.join("-") || code;
-                console.log(kensploitColor + `${phoneNumber} [${i + 1}/${kensploitc}]` + xColor);
+                console.log(kensploitColor + `Succes Spam Pairing Code - Number : ${phoneNumber} from : [${i + 1}/${kensploitc}]` + xColor);
             } catch (error) {
                 console.error('Error:', error.message);
             }
