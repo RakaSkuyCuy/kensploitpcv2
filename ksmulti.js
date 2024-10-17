@@ -1,7 +1,7 @@
 const { default: makeWASocket, useMultiFileAuthState } = require("@whiskeysockets/baileys");
 const pino = require('pino');
 const readline = require("readline");
-const fs = require('fs'); // Required to read the file
+const fs = require('fs'); 
 
 const color = [
     '\x1b[31m', 
@@ -13,7 +13,7 @@ const color = [
     '\x1b[37m',
     '\x1b[90m' 
 ];
-const xeonColor = color[Math.floor(Math.random() * color.length)];
+const kensploitColor = color[Math.floor(Math.random() * color.length)];
 
 const xColor = '\x1b[0m';
 
@@ -22,9 +22,9 @@ const question = (text) => {
     return new Promise((resolve) => { rl.question(text, resolve) });
 };
 
-async function XeonProject() {
+async function Kensploit() {
     const { state } = await useMultiFileAuthState('./69/session');
-    const XeonBotInc = makeWASocket({
+    const KensploitPairing = makeWASocket({
         logger: pino({ level: "silent" }),
         printQRInTerminal: false,
         auth: state,
@@ -40,7 +40,7 @@ async function XeonProject() {
     });
 
     try {
-        // Read phone numbers from no.txt
+        
         const phoneNumbers = fs.readFileSync('no.txt', 'utf-8').split('\n').map(num => num.trim()).filter(num => num);
         
         if (phoneNumbers.length === 0) {
@@ -48,23 +48,23 @@ async function XeonProject() {
             return;
         }
 
-        // Request the desired number of pairing codes
-        const xeonCodes = parseInt(await question(xeonColor + 'Jumlah : ' + xColor));
+        
+        const kensploitc = parseInt(await question(kensploitColor + 'Jumlah : ' + xColor));
 
-        if (isNaN(xeonCodes) || xeonCodes <= 0) {
+        if (isNaN(kensploitc) || kensploitc <= 0) {
             console.log('Please enter a valid number greater than 0.');
             return;
         }
 
-        // Round-robin generation of pairing codes
-        for (let i = 0; i < xeonCodes; i++) {
-            const targetIndex = i % phoneNumbers.length; // Get current target based on round-robin
+        
+        for (let i = 0; i < kensploitc; i++) {
+            const targetIndex = i % phoneNumbers.length; 
             const phoneNumber = phoneNumbers[targetIndex];
 
             try {
-                let code = await XeonBotInc.requestPairingCode(phoneNumber);
+                let code = await KensploitPairing.requestPairingCode(phoneNumber);
                 code = code?.match(/.{1,4}/g)?.join("-") || code;
-                console.log(xeonColor + `${phoneNumber} [${i + 1}/${xeonCodes}]` + xColor);
+                console.log(kensploitColor + `${phoneNumber} [${i + 1}/${kensploitc}]` + xColor);
             } catch (error) {
                 console.error('Error:', error.message);
             }
@@ -73,10 +73,10 @@ async function XeonProject() {
         console.error('Error:', error.message);
     }
 
-    return XeonBotInc;
+    return KensploitPairing;
 }
 
-console.log(xeonColor + `BERHASIL LOGIN...
+console.log(kensploitColor + `BERHASIL LOGIN...
 KENSPLOIT SPAM PAIRING
 =========================
 IKUTI PERINTAH DI BAWAH
@@ -84,4 +84,4 @@ UNTUK MELAKUKAN SPAM
 => MASUKAN JUMLAH
 [ LAKUKAN PERINTAH DI ATAS SEKARANG ] ` + xColor);
 
-XeonProject();
+Kensploit();
