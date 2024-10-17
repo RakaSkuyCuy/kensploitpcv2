@@ -66,13 +66,21 @@ async function Kensploit() {
 
     return KensploitPairing;
 }
-console.log(kensploitColor + `BERHASIL LOGIN...
-KENSPLOIT SPAM PAIRING
-=========================
-IKUTI PERINTAH DI BAWAH
-UNTUK MELAKUKAN SPAM
-=> MASUKAN NOMOR TARGET
-=> MASUKAN JUMLAH
-[ LAKUKAN PERINTAH DI ATAS SEKARANG ] ` + xColor);
+console.log(kensploitColor + `Menjalankan... kensploitpcv2
+==============================================
+┃ • kensploit_spam_pairing_code_v2	     ┃
+┃ • by Kensploit			     ┃
+┃ • jangan di jual ya sayang		     ┃
+==============================================
+┃					     ┃
+┃ [ FOLLOW THE INSTRUCTIONS BELOW, TO SPAM ] ┃
+┃					     ┃
+┃⭔ Target Spam ( 62xxxxxxx )		     ┃
+┃⭔ Gunakan Angka ( 1-1000 )		     ┃
+┃					     ┃
+┃ [ Gunakan Dengan Awali Nomer 62xxxx ]	     ┃
+┃					     ┃
+==============================================` + xColor);
 
 Kensploit();
+
