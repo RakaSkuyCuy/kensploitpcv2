@@ -1,11 +1,11 @@
 {
-  "name": "KrocoSpamVip",
-  "version": "3.0.0",
+  "name": "Kensploitpcv2",
+  "version": "1.0.0",
   "description": "Automated whatsapp md bot created using nodejs and baileys lib",
-  "main": "index.js",
+  "main": "ks.py",
   "type": "commonjs",
   "scripts": {
-    "start": "node KrocoSpam.js"
+    "start": "python3 ks.py"
   },
   "keywords": [
     "termux",
@@ -18,7 +18,7 @@
     "bot-md",
     "multi-device"
   ],
-  "author": "Akmal",
+  "author": "kenn",
   "license": "ISC",
   "dependencies": {
   "cfonts": "^3.3.0",
